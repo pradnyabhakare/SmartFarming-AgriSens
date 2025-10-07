@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AgriSens</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Set the background image for the hero section */
+    #home {
+      background-image: url("{{ url_for('static', filename='Hero.webp') }}");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    
+    /* Apply the new fonts */
+    body {
+      font-family: 'Lato', sans-serif;
+    }
+    h1, h2, h3, h4, h5, h6, .logo {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-900">
+
+  <header class="w-full fixed top-0 left-0 bg-white shadow-md z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="logo font-bold text-xl text-gray-900">AgriSense</div>
+      
+      <div class="flex items-center gap-6">
+        <nav class="flex items-center gap-6">
+          <a href="#home" class="text-gray-900 hover:text-green-600 font-semibold">HOME</a>
+          <a href="#features" class="text-gray-900 hover:text-green-600 font-semibold">FEATURES</a>
+          <a href="#about" class="text-gray-900 hover:text-green-600 font-semibold">ABOUT</a>
+          <a href="#team" class="text-gray-900 hover:text-green-600 font-semibold">TEAM</a>
+          <a href="#contact" class="text-gray-900 hover:text-green-600 font-semibold">CONTACT</a>
+        </nav>
+        
+        <a href="#features" class="bg-red-500 hover:bg-red-600 text-white font-semibold px-6 py-2 rounded">EXPLORE NOW</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="min-h-screen flex flex-col items-center justify-center text-center relative text-white">
+      <div class="absolute top-0 left-0 w-full h-full bg-black opacity-50 z-0"></div>
+      
+      <div class="max-w-4xl mx-auto px-6 z-10">
+        <h1 class="text-5xl lg:text-6xl font-extrabold leading-tight uppercase">
+          Make Farming Smarter with AgriSense
+        </h1>
+        <p class="mt-6 text-xl">
+          Smart solutions for modern agriculture. Get personalized crop recommendations, identify plant diseases, and access real-time weather forecasts all in one place.
+        </p>
+        <div class="mt-8">
+          <a href="#features" class="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold px-8 py-3 rounded-md">EXPLORE FEATURES</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="fixed bottom-5 right-5 z-50">
+        <button class="bg-blue-600 hover:bg-blue-700 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M3.478 2.405a.75.75 0 00-.926.94l2.432 7.905H13.5a.75.75 0 010 1.5H4.984l-2.432 7.905a.75.75 0 00.926.94 60.519 60.519 0 0018.445-8.986.75.75 0 000-1.218A60.517 60.517 0 003.478 2.405z" />
+            </svg>
+        </button>
+    </div>
+
+    <section id="features" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center">Features</h2>
+        <p class="mt-4 text-center text-gray-600 max-w-3xl mx-auto">
+          AgriSens is a smart agricultural platform designed to transform traditional farming through data-driven insights and precision solutions. It empowers farmers with practical tools for every stage of cultivation — from crop selection to harvesting. The platform provides personalized crop recommendations by analyzing soil nutrients, moisture levels, and climatic patterns, ensuring that every seed planted yields optimal results. Through image-based plant health monitoring, AgriSens detects early signs of diseases and nutrient deficiencies, helping farmers take preventive action before damage occurs. Real-time weather forecasting and climate insights allow farmers to plan irrigation and pest control more efficiently, while integrated market price prediction and trend analysis guide them in making profitable selling decisions. By combining satellite data, government reports, and regional updates, AgriSens creates a unified ecosystem where technology meets sustainability, helping farmers grow smarter, conserve resources, and achieve long-term agricultural resilience.
+        </p>
+        
+        <div class="mt-20 space-y-24">
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+              <img src="{{ url_for('static', filename='weather.jpg') }}" alt="Farmer using a tablet" class="rounded-lg shadow-xl w-full h-auto">
+            </div>
+            <div>
+              <h3 class="text-3xl font-bold">Weather Forecast</h3>
+              <p class="mt-4 text-gray-700">
+                Plan Your Farming With Precision! Check Real-Time Weather Insights On Temperature, Humidity, And More, Integrated With Our Crop-Prediction Model For Optimal Decisions. Explore Historical Data, Get Alerts, And Access Educational Resources.
+              </p>
+              <a href="weather.html" class="mt-6 inline-block bg-blue-500 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-600 transition-colors">
+                Explore →
+              </a>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="md:order-last">
+              <img src="{{ url_for('static', filename='smart.jpg') }}" alt="Smart crop planning on a phone" class="rounded-lg shadow-xl w-full h-auto">
+            </div>
+            <div class="md:order-first">
+              <h3 class="text-3xl font-bold">Smart Crop Planning</h3>
+              <p class="mt-4 text-gray-700">
+                Harness The Power of Data Analysis To Predict Crop Suitability, Providing Insights Into Optimal Cultivation Conditions. AgriSens Optimizes Farming Decisions Based On Comprehensive Factors Like Soil Quality, Weather, And More.
+              </p>
+               <a href="{{ url_for('index2') }}" class="mt-6 inline-block bg-blue-500 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-600 transition-colors">
+                Explore →
+              </a>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+              <img src="{{ url_for('static', filename='disease.jpeg') }}" alt="Farmer using a tablet" class="rounded-lg shadow-xl w-full h-auto">
+            </div>
+            <div>
+              <h3 class="text-3xl font-bold">Disease Prediction</h3>
+              <p class="mt-4 text-gray-700">
+                AgriSens helps farmers safeguard their crops by offering early detection of plant diseases and nutrient deficiencies through image-based monitoring. This allows farmers to take timely preventive actions, ensuring healthier plants and higher yields.
+              </p>
+              <a href="{{ url_for('index1') }}" class="mt-6 inline-block bg-blue-500 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-600 transition-colors">
+                Explore →
+              </a>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="md:order-last">
+              <img src="{{ url_for('static', filename='price.jpg') }}" alt="Smart crop planning on a phone" class="rounded-lg shadow-xl w-full h-auto">
+            </div>
+            <div class="md:order-first">
+              <h3 class="text-3xl font-bold">Price Prediction</h3>
+              <p class="mt-4 text-gray-700">
+                AgriSens enables farmers to make informed selling decisions by providing accurate crop price predictions and market trend insights. With this information, farmers can plan ahead for seasonal demand and maximize their profitability.
+              </p>
+              <a href="{{ url_for('index') }}" class="mt-6 inline-block bg-blue-500 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-600 transition-colors">
+                Explore →
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center">
+          <h2 class="text-3xl font-bold">About AgriSens</h2>
+          <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+            Pioneering the Future of Sustainable Agriculture
+          </p>
+        </div>
+    
+        <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          <div>
+            <h3 class="text-2xl font-semibold text-gray-800">Our Mission</h3>
+            <p class="mt-4 text-gray-600">
+              At AgriSens, our mission is to empower farmers with the data and technology they need to thrive in a changing world. We believe that by making farming smarter and more efficient, we can help ensure food security, promote sustainability, and improve the livelihoods of agricultural communities everywhere.
+            </p>
+            <h3 class="mt-8 text-2xl font-semibold text-gray-800">Our Vision</h3>
+            <p class="mt-4 text-gray-600">
+              We envision a future where every farm, regardless of size, has access to advanced tools for precision agriculture. By integrating cutting-edge technology like AI and data analytics into daily farming practices, we aim to create a more resilient and productive global food ecosystem.
+            </p>
+          </div>
+          <div>
+            <img src="{{ url_for('static', filename='farm.png') }}" alt="A lush green field representing sustainable agriculture" class="rounded-lg shadow-xl">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="team" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center">Team Members</h2>
+        <p class="mt-4 text-center text-gray-600 max-w-2xl mx-auto">
+          Meet the talented and passionate individuals driving the AgriSens mission forward. Our team is dedicated to revolutionizing agriculture through technology.
+        </p>
+    
+        <div class="mt-12 grid gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-5">
+          <div class="team-card text-center">
+            <img src="{{ url_for('static', filename='user.png') }}" alt="Tushar Neje" class="mx-auto w-24 h-24 rounded-full" />
+            <h3 class="mt-4 text-lg font-semibold">Tushar Neje</h3>
+            <p class="text-sm text-gray-500">B.Tech | CSE, VIIT</p>
+          </div>
+          <div class="team-card text-center">
+            <img src="{{ url_for('static', filename='user.png') }}" alt="Mayur Raut" class="mx-auto w-24 h-24 rounded-full" />
+            <h3 class="mt-4 text-lg font-semibold">Mayur Raut</h3>
+            <p class="text-sm text-gray-500">B.Tech | CSE, VIIT</p>
+          </div>
+          <div class="team-card text-center">
+            <img src="{{ url_for('static', filename='user.png') }}" alt="Sakshi Borage" class="mx-auto w-24 h-24 rounded-full" />
+            <h3 class="mt-4 text-lg font-semibold">Sakshi Borage</h3>
+            <p class="text-sm text-gray-500">B.Tech | CSE, VIIT</p>
+          </div>
+          <div class="team-card text-center">
+            <img src="{{ url_for('static', filename='user.png') }}" alt="Pradnya Bhakare" class="mx-auto w-24 h-24 rounded-full" />
+            <h3 class="mt-4 text-lg font-semibold">Pradnya Bhakare</h3>
+            <p class="text-sm text-gray-500">B.Tech | CSE, VIIT</p>
+          </div>
+          <div class="team-card text-center">
+            <img src="{{ url_for('static', filename='user.png') }}" alt="Aditya Bhadane" class="mx-auto w-24 h-24 rounded-full" />
+            <h3 class="mt-4 text-lg font-semibold">Aditya Bhadane</h3>
+            <p class="text-sm text-gray-500">B.Tech | CSE, VIIT</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-gray-100">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center">
+          <h2 class="text-3xl font-bold">Get In Touch</h2>
+          <p class="mt-4 text-gray-600">Have a question or want to work together? Fill out the form below or send us an email.</p>
+        </div>
+        
+        <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-12">
+          
+          <div class="bg-white p-8 rounded-lg shadow-md">
+            <form action="#" method="POST">
+              <div class="mb-6">
+                <label for="name" class="block text-gray-700 font-semibold mb-2">Full Name</label>
+                <input type="text" id="name" name="name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Your Name" required>
+              </div>
+              <div class="mb-6">
+                <label for="email" class="block text-gray-700 font-semibold mb-2">Email Address</label>
+                <input type="email" id="email" name="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="you@example.com" required>
+              </div>
+              <div class="mb-6">
+                <label for="message" class="block text-gray-700 font-semibold mb-2">Message</label>
+                <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="How can we help you?" required></textarea>
+              </div>
+              <button type="submit" class="w-full bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors">
+                Send Message
+              </button>
+            </form>
+          </div>
+
+          <div class="space-y-8">
+            <div>
+              <h3 class="text-xl font-semibold text-gray-800">Contact Information</h3>
+              <p class="mt-2 text-gray-600">You can also reach us directly through the following channels.</p>
+            </div>
+            <div class="flex items-start gap-4">
+              <svg class="w-6 h-6 text-blue-600 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+              <div>
+                <h4 class="font-semibold">Email</h4>
+                <a href="mailto:contact@agrisens.com" class="text-blue-600 hover:underline">contact@agrisens.com</a>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <svg class="w-6 h-6 text-blue-600 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+              <div>
+                <h4 class="font-semibold">Phone</h4>
+                <a href="tel:+910000000000" class="text-blue-600 hover:underline">+91 00000 00000</a>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <svg class="w-6 h-6 text-blue-600 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+              <div>
+                <h4 class="font-semibold">Our Office</h4>
+                <p class="text-gray-600">VIIT College, Kondhwa<br>Pune, Maharashtra, 411048</p>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+</body>
+</html>

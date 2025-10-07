@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AgriSens - Upload Image</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: 'Lato', sans-serif;
+    }
+    h1, h2, h3, h4, h5, h6, .logo {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-900">
+
+  <!-- Header -->
+  <header class="w-full fixed top-0 left-0 bg-white shadow-md z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="logo font-bold text-xl text-gray-900">AgriSense</div>
+
+      <div class="flex items-center gap-6">
+        <nav class="flex items-center gap-6">
+          <a href="/" class="text-gray-900 hover:text-green-600 font-semibold">HOME</a>
+          <a href="/#feature" class="text-gray-900 hover:text-green-600 font-semibold">FEATURES</a>
+          <a href="/#about" class="text-gray-900 hover:text-green-600 font-semibold">ABOUT</a>
+          <a href="/#team" class="text-gray-900 hover:text-green-600 font-semibold">TEAM</a>
+          <a href="/#contact" class="text-gray-900 hover:text-green-600 font-semibold">CONTACT</a>
+        </nav>
+
+        <a href="/#features" class="bg-red-500 hover:bg-red-600 text-white font-semibold px-6 py-2 rounded">EXPLORE NOW</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-24">
+
+    <section class="min-h-screen flex flex-col items-center justify-center text-center px-6">
+      <h1 class="text-4xl lg:text-5xl font-extrabold mb-6">Upload Your Image</h1>
+      <p class="text-gray-700 mb-8 max-w-xl">
+        Use our platform to upload your images. Once uploaded, you can process them with our AI-powered tools for crop analysis, disease detection, or smart farming insights.
+      </p>
+      
+      <!-- Upload Card -->
+      <div class="bg-white p-10 rounded-xl shadow-xl w-full max-w-md">
+        <form action="#" method="POST" enctype="multipart/form-data" class="flex flex-col gap-6">
+          <input type="file" name="image" accept="image/*" class="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+          <button type="submit" class="bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors">
+            Upload Image
+          </button>
+        </form>
+      </div>
+
+      <!-- Optional Preview -->
+      <div id="preview" class="mt-8"></div>
+
+    </section>
+
+  </main>
+
+  <script>
+    const fileInput = document.querySelector('input[name="image"]');
+    const preview = document.getElementById('preview');
+
+    fileInput.addEventListener('change', () => {
+      preview.innerHTML = '';
+      const file = fileInput.files[0];
+      if (file) {
+        const img = document.createElement('img');
+        img.src = URL.createObjectURL(file);
+        img.className = 'mx-auto mt-4 w-64 h-auto rounded-lg shadow-lg';
+        preview.appendChild(img);
+      }
+    });
+  </script>
+
+</body>
+</html>
